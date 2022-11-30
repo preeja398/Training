@@ -1,12 +1,27 @@
 #include<stdio.h>
 
 struct employee
-{    char employeeName[50];    int employeeId;
+{ 
+	   char employeeName[50]; 
+	   int employeeId;
 };
 
 int main()
-{    FILE *fp=NULL;    int n;    printf("enter number of employee:");    scanf("%d",&n);    struct employee emp[n];    int i;    for(i=0;i<n;i++)
-{    printf("Enter the employee details\n");    printf("Name:");    scanf("%s",emp[i].employeeName);    printf("Id:");    scanf("%d",&emp[i].employeeId);
+{
+	    FILE *fp=NULL;
+	    int n;
+	    printf("enter number of employee:"); 
+	    scanf("%d",&n);
+	    struct employee emp[n];
+	    int i;
+	    for(i=0;i<n;i++)
+		
+	{ 
+	   printf("Enter the employee details\n"); 
+	   printf("Name:");
+           scanf("%s",emp[i].employeeName);
+           printf("Id:");
+           scanf("%d",&emp[i].employeeId);
 }
 fp=fopen("file1.bin","wb");
 if(fp==NULL)
