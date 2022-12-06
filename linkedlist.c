@@ -3,7 +3,7 @@
 
 struct Node{
 	int data;
-	struct node *next;
+	struct Node *next;
 };
 
 struct Node *head = NULL;
@@ -38,14 +38,16 @@ void Display(){
 
 int main(){
     int choice;
-    void (*ptr [3])()={Insertion_Beginning, Display};
+    void (*ptr [2])()={Insertion_Beginning, Display};
     while(1)
     {
-	    printf("\n0.Insertion_Beginning\n1.Display\n");
+	    printf("\n0.Insertion_Beginning\n1.Display\n2.Exit\n");
 	    printf("Enter the choice:");
 	    scanf("%d", &choice);
 	    if(choice < 2) {
 		    (*ptr[choice])();
+	    } else if(choice == 2) {
+		    break;
 	    } else {
 		    printf("\n******Enter the valid choice******\n");
 	    }
