@@ -1,61 +1,53 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct node
-{
-int data;
-struct node *next;
+struct Node{
+	int data;
+	struct node *next;
 };
 
-struct node *head=NULL;
+struct Node *head = NULL;
 
-
-void insertion_beginning()
-{
-struct node *newNode;
-newNode =NULL;
-newNode=(struct node*)malloc(sizeof(struct node));
-printf("enter data :");
-scanf("%d",&newNode->data);
-if(head==NULL)
-{
-head=newNode;
-}
-else
-{
-newNode->next=head;
-head=newNode;
-}
-printf("\nNode inserted\n");
+void Insertion_Beginning(){
+	struct Node *newNode;
+	newNode = NULL;
+	newNode = (struct Node*)malloc(sizeof(struct Node));
+	printf("Enter data :");
+	scanf("%d", &newNode->data);
+	if(head == NULL) {
+		head = newNode;
+	} else {
+		newNode->next = head;
+		head = newNode;
+	}
+	printf("\nNode inserted\n");
 }
 
-void display()
-{
-int count=0;
-struct node *newNode;
-printf("Available data:\n");
-newNode=head;
-while(newNode!=NULL)
-{
-printf("%d\n",newNode->data);
-count++;
-newNode=newNode->next;
-}
-printf("\nTotal nodes:%d\n",count);
+void Display(){
+	int count = 0;
+	struct Node *newNode;
+	printf("Available data :\n");
+	newNode = head;
+	while(newNode != NULL){
+		printf("%d\n", newNode->data);
+		count ++;
+		newNode = newNode->next;
+	}
+	printf("\nTotal nodes:%d\n", count);
 }
 
-int main()
-{
-int choice;
- void (*ptr [3])()={ insertion_beginning, display,exit};
-while(1)
-{
-printf("\n0. insertion_beginning\n1. display\n2.Exit\n");
-printf("Enter the choice:");
-scanf("%d",&choice);
-if(choice <3)
-(*ptr[choice])();
-else
-printf("\n******Enter the valid choice******\n");
-}
+int main(){
+    int choice;
+    void (*ptr [3])()={Insertion_Beginning, Display};
+    while(1)
+    {
+	    printf("\n0.Insertion_Beginning\n1.Display\n");
+	    printf("Enter the choice:");
+	    scanf("%d", &choice);
+	    if(choice < 2) {
+		    (*ptr[choice])();
+	    } else {
+		    printf("\n******Enter the valid choice******\n");
+	    }
+    }
 }
