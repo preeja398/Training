@@ -4,15 +4,15 @@ struct Employee{ 
 	char employeeName[50]; 
 	int employeeId;
 };
-int main()
-{
+
+int main() {
 	FILE *fp = NULL;
 	int n;
 	printf("enter number of employee:"); 
 	scanf("%d", &n);
 	struct Employee emp[n];
 	int index;
-	for(index = 0; index < n; index ++){ 
+	for(index = 0; index < n; index ++) { 
 		printf("Enter the employee details\n"); 
 	        printf("Name:");
                 scanf("%s", emp[index].employeeName);
@@ -20,29 +20,26 @@ int main()
                 scanf("%d", &emp[index].employeeId);
         }
         fp=fopen("file1.bin", "wb");
-        if(fp == NULL){
+        if(fp == NULL) {
 		printf("error in open file in write mode");
-        }
-        else{
-		for(index = 0; index < n; index ++){
+        } else {
+		for(index = 0; index < n; index ++) {
         	fwrite(&emp, sizeof(struct Employee), n, fp);
 		}
 	fclose(fp);	
         }
 	fp = fopen("file1.bin", "rb");
-        if(fp == NULL){      
+        if(fp == NULL) {       
 		printf("error open filn in read mode");
-	}
-	else{
-		for(index = 0; index < n; index ++){
-			fread(&emp[index], sizeof(struct Employee), n, fp);
-			printf("Employee name:%s\tEmployee id:%d\n", emp[index].employeeName, emp[index].employeeId);
+	} else {
+	        for(index = 0; index < n; index ++) {
+                fread(&emp[index], sizeof(struct Employee), n, fp);
+		printf("Employee name:%s\tEmployee id:%d\n", emp[index].employeeName, emp[index].employeeId);
 		}
 
 	}
 	fclose(fp);	
 	
-
 }
 
 
