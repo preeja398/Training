@@ -1,7 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include <ctype.h>
-#include <stdbool.h>
 
 struct Node {
 	int data;
@@ -41,7 +39,6 @@ void Display(){
 
 int main(){
     int choice;
-    bool runOnlyOnce = false;
     void (*ptr [2])() = {Insertion_Beginning, Display};
     while(1) {
 	    printf("0.Insertion_Beginning\n1.Display\n2.Exit\n");
@@ -52,7 +49,7 @@ int main(){
 		    printf("\n***Enter valid integer***\n");
 		    while ((getchar()) != '\n');
 		    continue;
-	    } else if (choice < 2 && choice >=0) {
+	    } else if (choice < 2 && choice >= 0) {
 		    (*ptr[choice])();
 	    } else if (choice == 2) {
 		    break;
