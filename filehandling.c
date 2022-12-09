@@ -17,17 +17,15 @@ int main(){
 	    scanf("%d", &emp[index].employeeId);
     }
     
-    fp = fopen("file.bin", "wb");
+    fp = fopen("file.bin", "wb+");
     if(fp == NULL) {
 	    printf("error in open file in write mode");
     } else {
 	    for(index = 0; index < 2; index ++){
 		    fwrite(&emp[index], sizeof(struct Employee), 1, fp);
 	    }
-	    fclose(fp);
     }
 
-    fp = fopen("file.bin", "rb");
     if(fp == NULL) {
 	    printf("error open filn in read mode");
     } else {
@@ -35,7 +33,7 @@ int main(){
 		    fread(&emp[index], sizeof(struct Employee), 1, fp);
 		    printf("Employee name:%s\tEmployee id:%d\n", emp[index].employeeName, emp[index].employeeId);
 	    }
-	    fclose(fp);
     }
+    fclose(fp);
 }
 
