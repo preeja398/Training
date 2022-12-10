@@ -1,6 +1,7 @@
 #include<stdio.h>
+#include<stdlib.h>
 
-struct Employee { 
+struct Employee {
 	char employeeName[50]; 
 	int employeeId;
 };
@@ -23,14 +24,14 @@ int main() {
         if(fp == NULL) {
 		printf("error in open file in write mode");
         } else {
-		for(index = 0; index < n; index ++) {
-        	fwrite(&emp, sizeof(struct Employee), n, fp);
+	for(index = 0; index < n; index ++) {
+        	fwrite(&emp[index], sizeof(struct Employee), n, fp);
 		}
 	fclose(fp);	
         }
 	fp = fopen("file1.bin", "rb");
         if(fp == NULL) {       
-		printf("error open filn in read mode");
+		printf("error open file in read mode");
 	} else {
 	        for(index = 0; index < n; index ++) {
                 fread(&emp[index], sizeof(struct Employee), n, fp);
