@@ -4,8 +4,6 @@ int main() {
     int array[50];
     int size;
     int index;
-    int iterator;
-    int temp;
     int search;
     int first;
     int last;
@@ -13,7 +11,7 @@ int main() {
 
     printf("Enter the no.of elements:\n");
     scanf("%d", &size);
-    printf("Enter the elements in sorted manner:\n");
+    printf("Enter the elements in sorted format:\n");
 
     for (index =0; index < size; index ++ ) {
         scanf("%d", &array[index]);
