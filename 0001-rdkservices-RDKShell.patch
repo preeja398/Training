@@ -1,0 +1,9 @@
+Index: git/RDKShell/RDKShell.config
+===================================================================
+--- git.orig/RDKShell/RDKShell.config
++++ git/RDKShell/RDKShell.config
+@@ -1,5 +1,5 @@
+set (autostart ${PLUGIN_RDKSHELL_AUTOSTART})
+-set (preconditions Platform)
++set (preconditions Internet)
+set (callsign "org.rdk.RDKShell")
