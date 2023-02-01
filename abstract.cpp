@@ -49,4 +49,3 @@ int main() {
     Space *s2 = &rectangle;
     s2->calculateArea();
 }
-
