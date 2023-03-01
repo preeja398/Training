@@ -1,0 +1,8 @@
+{
+ "locator":"libWPEFrameworkDisplayImageInfo.so",
+ "classname":"DisplayImageInfo",
+ "precondition":[
+  "Platform"
+ ],
+ "callsign":"org.rdk.DisplayImageInfo",
+ "autostart":false
