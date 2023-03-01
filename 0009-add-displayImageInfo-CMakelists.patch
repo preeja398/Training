@@ -1,0 +1,15 @@
+Index: git/CMakeLists.txt
+===================================================================
+--- git.orig/CMakeLists.txt
++++ git/CMakeLists.txt
+@@ -340,6 +340,10 @@ if(PLUGIN_UNIFIEDCASMANAGEMENT)
+     add_subdirectory(UnifiedCASManagement)
+ endif()
+
++if(PLUGIN_DISPLAYIMAGEINFO)
++    add_subdirectory(DisplayImageInfo)
++endif()
++
+ if(WPEFRAMEWORK_CREATE_IPKG_TARGETS)
+     set(CPACK_GENERATOR "DEB")
+     set(CPACK_DEB_COMPONENT_INSTALL ON)
