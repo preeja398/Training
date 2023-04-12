@@ -1,0 +1,56 @@
+{
+"$schema": "interface.schema.json",
+  "jsonrpc": "2.0",
+  "info": {
+    "title": "Display Image Info API",
+    "class":  "DisplayImageInfo",
+    "description": "DisplayImageInfo JSON-RPC interfaces"
+  },
+  "properties": {
+    "displayimageinfo": {
+      "summary": "Display image information",
+      "readonly": "true",
+      "params": {
+        "type": "object",
+        "properties": {
+          "imagename": {
+            "description": "Display  current image name",
+            "type": "string"
+          },
+          "branch": {
+            "description": "Display  current image branch",
+            "type": "string"
+          },
+          "yoctoversion": {
+            "description": "Display  current image yocto version",
+            "type": "string"
+          },
+          "version": {
+            "description": "Display  current image version",
+            "type": "string"
+          },
+          "spin": {
+            "description": "Display  current image spin",
+            "type": "string"
+          },
+          "buildtime":{
+            "description": "Display  current image built time",
+            "type": "string"
+          },
+          "builddate": {
+            "description": "Display  current image built date",
+            "type": "string"
+           }
+        },
+        "required": [
+          "imagename",
+          "branch",
+          "yoctoversion",
+          "spin",
+          "buildtime",
+          "builddate"
+        ]
+      }
+    }
+  }
+}
